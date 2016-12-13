@@ -5,17 +5,13 @@
   <title>JS + CSS Clock</title>
 </head>
 <body>
-
-
     <div class="clock">
       <div class="clock-face">
         <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
+        <div class="hand min-hand" style="background: #F44336;"></div>
+        <div class="hand second-hand" style="background: #CDDC39;"></div>
       </div>
     </div>
-
-
   <style>
     html {
       background:#018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
@@ -61,13 +57,27 @@
       background:black;
       position: absolute;
       top:50%;
+     transform-origin: 100% 0;
     }
-
+    
   </style>
-
   <script>
-
-
+    const hourHand = document.querySelector('.hour-hand');
+    const minHand = document.querySelector('.min-hand');
+    const secHand = document.querySelector('.second-hand');
+    function drawTimeNow() {
+      const d = new Date;
+      const h = (d.getHours() % 12) * 360 / 12 ;
+      const m = d.getMinutes() * 360 / 60;
+      const s = d.getSeconds() * 360 / 60;
+      console.log(d.getHours() % 12);
+      console.log(d,h,m,s);
+      hourHand.style.transform = `rotate(${h+90}deg)`;
+      minHand.style.transform = `rotate(${m+90}deg)`;
+      secHand.style.transform = `rotate(${s+90}deg)`;
+    }
+    drawTimeNow();
+    setInterval(drawTimeNow, 1000);
   </script>
 </body>
 </html>
