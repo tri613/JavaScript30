@@ -15,3 +15,7 @@ These are meant to be 1:1 copies of what is done in the video. If you found a be
 The starter files + solutions will be updated if/when the videos are updated. 
 
 Thanks!
+
+# Records
+
+- 2016/12/13 Day2 complete!
