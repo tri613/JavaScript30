@@ -48,6 +48,28 @@
   </style>
 
   <script>
+    const spacing = document.querySelector('[name="spacing"]');
+    const blur = document.querySelector('[name="blur"]');
+    const base = document.querySelector('[name="base"]');
+    const img = document.querySelector('img');
+
+    const spacingOnchange = (e) => {
+      img.style.padding = `${e.target.value}px`;
+    };
+    const blurOnchange = (e) => {
+      img.style.filter = `blur(${e.target.value}px)`;
+    };
+    const baseOnchange = (e) => {
+      img.style.backgroundColor = e.target.value;
+    };
+
+    spacing.addEventListener('change',spacingOnchange);
+    blur.addEventListener('change', blurOnchange);
+    base.addEventListener('change', baseOnchange);
+
+    spacing.dispatchEvent(new Event('change'));
+    blur.dispatchEvent(new Event('change'));
+    base.dispatchEvent(new Event('change'));
   </script>
 
 </body>
