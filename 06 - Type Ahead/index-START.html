@@ -16,6 +16,41 @@
   </form>
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+const cities = [];
+const promise = fetch(endpoint)
+    .then(response => response.json())
+    .then( json => cities.push(...json) );
+const ul = document.querySelector('ul.suggestions');
+const input = document.querySelector('.search');
+
+input.addEventListener('keyup', searchHandler);
+
+function searchHandler(e) {
+  const keyword = this.value;
+  const result = cities.map((cityObj) => {
+    if (cityObj.city.toLowerCase().includes(keyword.toLowerCase())) {
+      // const name = cityObj.city.split(keyword).join(`<span class='hl'>${keyword}</span>`);
+      const reg = new RegExp(keyword,'gi');
+      const name = cityObj.city.replace(reg, `<span class='hl'>${keyword}</span>`) 
+      const population = numberWithCommas(cityObj.population);  
+      return `
+        <li>
+          <span class="name">${name}</span>
+          <span class="population">${population}</span>
+        </li>
+      `;
+    }
+  }).join('');
+  showResult(result);
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function showResult(result) {
+  ul.innerHTML = result;
+}
 
 </script>
   </body>

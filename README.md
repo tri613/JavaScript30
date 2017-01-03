@@ -13,3 +13,6 @@
 	這篇剛好可以趁機回憶一下前陣子看的[教學影片](https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)！(講師超有趣XD)
 - Day5 -- 2016/12/26
 	寫是寫完了不過要來好好認真看一下flex才行QQ
+- Day6 -- 2017/01/03
+	年末總是在忙著慶祝嘛！(爆)
+	
