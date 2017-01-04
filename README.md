@@ -15,4 +15,6 @@
 	寫是寫完了不過要來好好認真看一下flex才行QQ
 - Day6 -- 2017/01/03
 	年末總是在忙著慶祝嘛！(爆)
+	- fetch
+	- regular expression
 	
