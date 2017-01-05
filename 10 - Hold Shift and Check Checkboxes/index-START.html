@@ -104,6 +104,52 @@
   </div>
 
 <script>
+const checkboxes = document.querySelectorAll('.item input');
+let prevIndex = null;
+let listening = false;
+
+document.addEventListener('keydown', (e) => {
+  if (e.keyCode == 16) {
+    listening = true;
+  }
+});
+
+document.addEventListener('keyup', (e) => {
+  if (e.keyCode == 16) {
+    listening = false;
+    prevIndex = null;
+  }
+});
+
+checkboxes.forEach((checkbox, index) => {
+  checkbox.addEventListener('click', (e) => {
+    if (listening && e.target.checked) {
+      findSiblingsBetween(prevIndex, index);
+    }
+    prevIndex = index;
+  });
+});
+
+function findSiblingsBetween(start, end) {
+  if (start == null) start = checkboxes.length-1;
+  if (start > end) [start, end] = [end, start];
+  checkboxes.forEach((checkbox, index) => {
+    if (index >= start && index <= end) {
+      checkbox.checked = true;
+    }
+  });
+}
+
+// checkboxes.forEach((checkbox, index) => {
+//   checkbox.addEventListener('click', (e) => {
+//     if (e.shiftKey) {
+//       findSiblingsBetween(prevIndex, index);
+//     }
+//     prevIndex = index;
+//   });
+// });
+
+
 </script>
 </body>
 </html>

@@ -18,3 +18,7 @@
 	- fetch
 	- regular expression
 - Day7 + 8 -- 2017/01/04
+- Day9 + 10 -- 2017/01/05
+	- `console.time(name)` + `console.timeEnd(name)`
+	- `console.group(name)` + `console.groupEnd(name)`
+	-  Holding down the `Shift`key could be captured by `MouseEvents` and `KeyboardEvents` with `event.shiftKey` (true for holding down shift key)
