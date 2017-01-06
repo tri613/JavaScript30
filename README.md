@@ -22,3 +22,4 @@
 	- `console.time(name)` + `console.timeEnd(name)`
 	- `console.group(name)` + `console.groupEnd(name)`
 	-  Holding down the `Shift`key could be captured by `MouseEvents` and `KeyboardEvents` with `event.shiftKey` (true for holding down shift key)
+- Day11 + 12 -- 2017/01/06
