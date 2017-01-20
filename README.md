@@ -94,7 +94,6 @@
 	- Copying an object
 
 		```javascript
-		//以下幾種方式皆可行
 		const personCopy = Object.assign({}, person, {
 			newProperty: "some additional property for personCopy"
 		});
