@@ -26,9 +26,55 @@
   </div>
 
 <script>
+  const itemInput = document.querySelector('[name="item"]');
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
   const items = [];
+  const storage = localStorage;
+  restoreOptions();
+
+  function restoreOptions() {
+    const storageItems = (storage.items) ? JSON.parse(storage.items) : [];
+    items.push(...storageItems);
+    renderList();
+  }
+
+  function renderList() {
+    itemsList.innerHTML = items.map((item, i) => {
+      const checked = (item.done) ? "checked" : "";
+      return `
+        <li>
+          <input type="checkbox" data-index="${i}" id="item${i}" ${checked}>
+          <label for="item${i}">${item.text}</label>
+        </li>
+      `;
+    }).join("");
+  }
+
+  function addItemHandler(e) {
+    e.preventDefault();
+    const itemText = itemInput.value;
+    items.push({
+      text: itemText,
+      done: false
+    });
+    storage.setItem('items', JSON.stringify(items));
+    renderList();
+    itemInput.value = "";
+  }
+
+  function changeStateHandler(e) {
+    if (e.target.tagName.toLowerCase() === 'input') {
+      const theItemIndex = e.target.dataset.index;
+      console.log(theItemIndex);
+      const state = !items[theItemIndex].done;
+      items[theItemIndex].done = state;
+      storage.setItem('items', JSON.stringify(items));
+    }
+  }
+
+  addItems.addEventListener('submit', addItemHandler);
+  itemsList.addEventListener('click', changeStateHandler);
 
 </script>
 

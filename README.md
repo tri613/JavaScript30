@@ -22,11 +22,14 @@
 - Day9 + 10 -- 2017/01/05
 	- `console.time(name)` + `console.timeEnd(name)`
 	- `console.group(name)` + `console.groupEnd(name)`
-	-  Holding down the `Shift`key could be captured by `MouseEvents` and `KeyboardEvents` with `event.shiftKey` (true for holding down shift key)
+	-  Holding down the `Shift`key could be captured by `MouseEvents` and `KeyboardEvents` with `event.shiftKey` (true for "is holding down shift key")
 - Day11 + 12 -- 2017/01/06
 - Day13 -- PASS (欸)
 - Day14 -- 2017/01/20
 	- 這章好重要，前陣子也有認真看了一下JS裡面`by value`跟`by reference`的問題，另外開一個區塊寫XD
+- Day15 -- 2017/01/28 （新年寫code...廠廠)
+	- `JSON.parse(null)`是ＯＫ的，但`JSON.parse(undefined)`就會跳error。
+
 
 ## Notes
 ### Day14 - JavaScript References VS Copying
