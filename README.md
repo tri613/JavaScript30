@@ -29,6 +29,18 @@
 	- 這章好重要，前陣子也有認真看了一下JS裡面`by value`跟`by reference`的問題，另外開一個區塊寫XD
 - Day15 -- 2017/01/28 （新年寫code...廠廠)
 	- `JSON.parse(null)`是ＯＫ的，但`JSON.parse(undefined)`就會跳error。
+- Day16 -- 2017/01/28
+	- 如果在捕捉滑鼠移動位置事件時，假如被掛上listener的元素裡面還有子元素的話，
+		記得要另外加上子元素和父元素的相對位置。
+		```javascript
+			let x = e.target.offsetX;
+			let y = e.target.offsetY;
+			if (this !== e.target) {
+				x = x + e.target.offsetLeft;
+				y = y + e.target.offsetTop;
+			}
+		```
+		延伸：[圖解offsetLeft、offsetTop、offsetWidth和offsetHeight](http://emn178.pixnet.net/blog/post/95297028-%E5%9C%96%E8%A7%A3offsetleft%E3%80%81offsettop%E3%80%81offsetwidth%E5%92%8Coffsetheight)
 
 
 ## Notes
