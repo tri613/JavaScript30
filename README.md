@@ -120,20 +120,20 @@ console.log(players);
 	要注意的是以上的方法是 `Shallow copy`，如果 Object 本身是`二維`以上的話，使用上面的方式還是會有 `By reference`的情況發生。
 
 	```javascript
-		let me = {
-			name: "Trina",
-			age: 24,
-			social: {
-				twitter: "@tri613",
-				github: "tri613"
-			}
-		};
+	let me = {
+		name: "Trina",
+		age: 24,
+		social: {
+			twitter: "@tri613",
+			github: "tri613"
+		}
+	};
 
-		let me2 = Object.assign({}, me);
-		me2.social.twitter = "@nomoney";
+	let me2 = Object.assign({}, me);
+	me2.social.twitter = "@nomoney";
 
-		console.log(me.social);
-		//{twitter: "@nomoney", github: "tri613"} --> Changed!
+	console.log(me.social);
+	//{twitter: "@nomoney", github: "tri613"} --> Changed!
 	```
 	
 	這種情況需要靠`Deep clone`來解決，最簡單 (但效率表現沒那麼好) 的方式 是直接使用JSON格式encode再decode的方式解決。
