@@ -34,15 +34,15 @@
 	  記得要另外加上子元素和父元素的相對位置。
 	
 	```javascript
-		let x = e.target.offsetX;
-		let y = e.target.offsetY;
-		if (this !== e.target) {
-			x = x + e.target.offsetLeft;
-			y = y + e.target.offsetTop;
-		}
+	let x = e.target.offsetX;
+	let y = e.target.offsetY;
+	if (this !== e.target) {
+		x = x + e.target.offsetLeft;
+		y = y + e.target.offsetTop;
+	}
 	```
-
-延伸：[圖解offsetLeft、offsetTop、offsetWidth和offsetHeight](http://emn178.pixnet.net/blog/post/95297028-%E5%9C%96%E8%A7%A3offsetleft%E3%80%81offsettop%E3%80%81offsetwidth%E5%92%8Coffsetheight)
+	
+	延伸：[圖解offsetLeft、offsetTop、offsetWidth和offsetHeight](http://emn178.pixnet.net/blog/post/95297028-%E5%9C%96%E8%A7%A3offsetleft%E3%80%81offsettop%E3%80%81offsetwidth%E5%92%8Coffsetheight)
 
 
 ## Notes
@@ -56,13 +56,13 @@
 
   一般來說只要是 strings, numbers 和 booleans，都可以說是 `by value`。
 
-	```javascript
-	let a = "string";
-	let b = a;
-	console.log(a, b); // "string", "string"
-	b = "another string";
-	console.log(a, b); // "string", "another string"
-	```
+```javascript
+let a = "string";
+let b = a;
+console.log(a, b); // "string", "string"
+b = "another string";
+console.log(a, b); // "string", "another string"
+```
 
 2. By Reference
 
