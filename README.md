@@ -41,8 +41,8 @@
 			y = y + e.target.offsetTop;
 		}
 	```
-	
-	  延伸：[圖解offsetLeft、offsetTop、offsetWidth和offsetHeight](http://emn178.pixnet.net/blog/post/95297028-%E5%9C%96%E8%A7%A3offsetleft%E3%80%81offsettop%E3%80%81offsetwidth%E5%92%8Coffsetheight)
+
+延伸：[圖解offsetLeft、offsetTop、offsetWidth和offsetHeight](http://emn178.pixnet.net/blog/post/95297028-%E5%9C%96%E8%A7%A3offsetleft%E3%80%81offsettop%E3%80%81offsetwidth%E5%92%8Coffsetheight)
 
 
 ## Notes
